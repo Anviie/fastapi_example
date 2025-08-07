@@ -29,5 +29,16 @@ def main():
     return 'Стартовая сраница'
 
 if __name__ == '__main__':
-    uvicorn.run('async_vs_sync_api:app', reload=False, workers=100)
+    uvicorn.run('async_vs_sync_api:app', reload=True)
+    
+    # 100 воркеров, конечно было перебор, CPU не обрадовался,
+    # 25 оптимально. Занимает около 45-60% при старте,
+    # с 3к запросов поднимается до 30% кратковременно
+    # Sync отрабатывает 37 сек. | Async 5 сек.
+    
+    # На 10к запросов серварк ругнулся в консоль, но продолжил исполнять.
+    # Ответа на мои гет запросы я так и не получил.
+    # Что-то пошло не так
+    
+    # uvicorn.run('async_vs_sync_api:app', reload=False, workers=25)
     

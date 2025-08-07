@@ -28,7 +28,7 @@ async def get_http_data(i: int, endpoint: str):
             
 async def main():
     await asyncio.gather(
-        *[get_http_data(i,'async') for i in range(3000)]
+        *[get_http_data(i,'async') for i in range(30000)]
         # *[get_http_data(i,'sync') for i in range(3000)]
         )
     

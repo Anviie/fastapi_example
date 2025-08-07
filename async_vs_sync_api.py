@@ -29,5 +29,5 @@ def main():
     return 'Стартовая сраница'
 
 if __name__ == '__main__':
-    uvicorn.run('async_vs_sync_api:app', reload=False, workers=10)
+    uvicorn.run('async_vs_sync_api:app', reload=False, workers=100)
     
